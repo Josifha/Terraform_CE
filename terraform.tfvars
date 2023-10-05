@@ -1,4 +1,4 @@
-instance_name = "mongo-terraform-dev-r1"
+instance_name = "myterraform"
 
 tags = ["mongodb", "dev", "replicaset"]
 

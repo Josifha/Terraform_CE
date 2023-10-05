@@ -24,19 +24,8 @@ resource "google_compute_instance" "default" {
   network_interface {
     network = "${var.network}"
 
-    access_config {
-      # nat_ip = "${google_compute_address.static.address}"
-    }
-  }
-
-  service_account {
-    email = "${var.service_account}"
-    scopes = ["cloud-platform"]
-  }
-
-  metadata_startup_script  = "${file("./start.sh")}"
 }
-
+}
 output "ip" {
-  value = "${google_compute_instance.default.network_interface.0.access_config.0.nat_ip}"
+  value = google_compute_instance.default.instance_id
 }

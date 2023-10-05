@@ -1,5 +1,5 @@
 variable "instance_name" {
-  type = "string"
+  type = string
 }
 
 variable "machine_type" {
@@ -9,12 +9,7 @@ variable "machine_type" {
 
 variable "region" {
   description = "gcp region for specified instance"
-  default = "us-west1-b"
-}
-
-variable "project" {
-  description = "project name in which we will create all instance"
-  default = "project-name"
+  default = "us-central1-c"
 }
 
 variable "image_name" {
@@ -32,20 +27,10 @@ variable "network" {
   default = "default"
 }
 
-variable "credential" {
-  description = "credential file path different for different users"
-  default = "gcpsecurekey.json"
-}
-
 variable "tags" {
-  type = "list"
+  type = list
   description = "tags is used for defining the rule of a instance"
 }
-
-variable "service_account" {
-  default = "test@developer.gserviceaccount.com"
-}
-
 
 
 
