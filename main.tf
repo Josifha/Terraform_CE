@@ -21,10 +21,13 @@ resource "google_compute_instance" "default" {
     }
   }
 
-  network_interface {
-    network = "${var.network}"
+ network_interface {
+    access_config {
+      network_tier = "PREMIUM"
+    }
 
-}
+    subnetwork = "default"
+  }
 }
 output "ip" {
   value = google_compute_instance.default.instance_id
